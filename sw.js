@@ -15,11 +15,7 @@ var STATIC_FILES = [
   '/src/js/material.min.js',
   '/src/css/app.css',
   '/src/css/feed.css',
-  '/src/images/main-image.jpg',
-  '/node_modules/bootstrap/dist/css/bootstrap.min.css',
-  '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-  '/node_modules/@popperjs/core/dist/umd/popper.min.js',
-  '/node_modules/bootstrap/dist/js/bootstrap.min.js'
+  '/src/images/main-image.jpg'
 ];
 
 // function trimCache(cacheName, maxItems) {
