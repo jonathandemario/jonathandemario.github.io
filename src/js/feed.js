@@ -1,7 +1,7 @@
-// var shareImageButton = document.querySelector('#share-image-button');
-// var createPostArea = document.querySelector('#create-post');
-// var closeCreatePostModalButton = document.querySelector('#close-create-post-modal-btn');
-// var sharedMomentsArea = document.querySelector('#shared-moments');
+var shareImageButton = document.querySelector('#share-image-button');
+var createPostArea = document.querySelector('#create-post');
+var closeCreatePostModalButton = document.querySelector('#close-create-post-modal-btn');
+var sharedMomentsArea = document.querySelector('#shared-moments');
 
 function openCreatePostModal() {
   createPostArea.style.display = 'block';
@@ -31,13 +31,13 @@ function openCreatePostModal() {
   // }
 }
 
-// function closeCreatePostModal() {
-//   createPostArea.style.display = 'none';
-// }
+function closeCreatePostModal() {
+  createPostArea.style.display = 'none';
+}
 
-// shareImageButton.addEventListener('click', openCreatePostModal);
+shareImageButton.addEventListener('click', openCreatePostModal);
 
-// closeCreatePostModalButton.addEventListener('click', closeCreatePostModal);
+closeCreatePostModalButton.addEventListener('click', closeCreatePostModal);
 
 // Currently not in use, allows to save assets in cache on demand otherwise
 function onSaveButtonClicked(event) {
@@ -51,47 +51,47 @@ function onSaveButtonClicked(event) {
   }
 }
 
-// function clearCards() {
-//   while(sharedMomentsArea.hasChildNodes()) {
-//     sharedMomentsArea.removeChild(sharedMomentsArea.lastChild);
-//   }
-// }
+function clearCards() {
+  while(sharedMomentsArea.hasChildNodes()) {
+    sharedMomentsArea.removeChild(sharedMomentsArea.lastChild);
+  }
+}
 
-// function createCard(data) {
-//   var cardWrapper = document.createElement('div');
-//   cardWrapper.className = 'shared-moment-card mdl-card mdl-shadow--2dp';
-//   var cardTitle = document.createElement('div');
-//   cardTitle.className = 'mdl-card__title';
-//   cardTitle.style.backgroundImage = 'url(' + data.image + ')';
-//   cardTitle.style.backgroundSize = 'cover';
-//   cardTitle.style.height = '180px';
-//   cardWrapper.appendChild(cardTitle);
-//   var cardTitleTextElement = document.createElement('h2');
-//   cardTitleTextElement.style.color = 'white';
-//   cardTitleTextElement.className = 'mdl-card__title-text';
-//   cardTitleTextElement.textContent = data.title;
-//   cardTitle.appendChild(cardTitleTextElement);
-//   var cardSupportingText = document.createElement('div');
-//   cardSupportingText.className = 'mdl-card__supporting-text';
-//   cardSupportingText.textContent = data.location;
-//   cardSupportingText.style.textAlign = 'center';
-//   // var cardSaveButton = document.createElement('button');
-//   // cardSaveButton.textContent = 'Save';
-//   // cardSaveButton.addEventListener('click', onSaveButtonClicked);
-//   // cardSupportingText.appendChild(cardSaveButton);
-//   cardWrapper.appendChild(cardSupportingText);
-//   componentHandler.upgradeElement(cardWrapper);
-//   sharedMomentsArea.appendChild(cardWrapper);
-// }
+function createCard(data) {
+  var cardWrapper = document.createElement('div');
+  cardWrapper.className = 'shared-moment-card mdl-card mdl-shadow--2dp';
+  var cardTitle = document.createElement('div');
+  cardTitle.className = 'mdl-card__title';
+  cardTitle.style.backgroundImage = 'url(' + data.image + ')';
+  cardTitle.style.backgroundSize = 'cover';
+  cardTitle.style.height = '180px';
+  cardWrapper.appendChild(cardTitle);
+  var cardTitleTextElement = document.createElement('h2');
+  cardTitleTextElement.style.color = 'white';
+  cardTitleTextElement.className = 'mdl-card__title-text';
+  cardTitleTextElement.textContent = data.title;
+  cardTitle.appendChild(cardTitleTextElement);
+  var cardSupportingText = document.createElement('div');
+  cardSupportingText.className = 'mdl-card__supporting-text';
+  cardSupportingText.textContent = data.location;
+  cardSupportingText.style.textAlign = 'center';
+  // var cardSaveButton = document.createElement('button');
+  // cardSaveButton.textContent = 'Save';
+  // cardSaveButton.addEventListener('click', onSaveButtonClicked);
+  // cardSupportingText.appendChild(cardSaveButton);
+  cardWrapper.appendChild(cardSupportingText);
+  componentHandler.upgradeElement(cardWrapper);
+  sharedMomentsArea.appendChild(cardWrapper);
+}
 
-// function updateUI(data) {
-//   clearCards();
-//   for (var i = 0; i < data.length; i++) {
-//     createCard(data[i]);
-//   }
-// }
+function updateUI(data) {
+  clearCards();
+  for (var i = 0; i < data.length; i++) {
+    createCard(data[i]);
+  }
+}
 
-var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/post.json';
+var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/posts';
 var networkDataReceived = false;
 
 fetch(url)
@@ -105,7 +105,7 @@ fetch(url)
     for (var key in data) {
       dataArray.push(data[key]);
     }
-    // updateUI(dataArray);
+    updateUI(dataArray);
   });
 
 if ('indexedDB' in window) {
@@ -113,7 +113,7 @@ if ('indexedDB' in window) {
     .then(function(data) {
       if (!networkDataReceived) {
         console.log('From cache', data);
-        // updateUI(data);
+        updateUI(data);
       }
     });
 }
