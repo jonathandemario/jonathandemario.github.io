@@ -74,7 +74,7 @@ function isInArray(string, array) {
 
 self.addEventListener('fetch', function (event) {
 
-  var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/post.json';
+  var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json';
   if (event.request.url.indexOf(url) > -1) {
     event.respondWith(fetch(event.request)
       .then(function (res) {
