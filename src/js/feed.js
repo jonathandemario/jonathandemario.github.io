@@ -91,7 +91,7 @@ function updateUI(data) {
   }
 }
 
-var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/posts';
+var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/post';
 var networkDataReceived = false;
 
 fetch(url)
@@ -109,7 +109,7 @@ fetch(url)
   });
 
 if ('indexedDB' in window) {
-  readAllData('posts')
+  readAllData('post')
     .then(function(data) {
       if (!networkDataReceived) {
         console.log('From cache', data);
