@@ -91,7 +91,7 @@ function onSaveButtonClicked(event) {
 //   }
 // }
 
-var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/post.json';
+var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json';
 var networkDataReceived = false;
 
 fetch(url)
