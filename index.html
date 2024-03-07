@@ -6,17 +6,16 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>PWAGram</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+
+  <title>Home|JoFit</title>
+
   <link rel="stylesheet" href="/src/css/app.css">
   <link rel="stylesheet" href="/src/css/feed.css">
   <link rel="stylesheet" href="/src/css/bootstrap.min.css">
   <link rel="manifest" href="/manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
   <meta name="apple-mobile-web-app-title" content="PWAGram">
   <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
   <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
@@ -42,20 +41,71 @@
 </head>
 
 <style>
-  /* * {
-    z-index: 1000;
-  } */
-  /* @font-face {
-      font-family: 'Alphakind';
-      src: url('assets/Alphakind.otf');
-  } */
+
+  body {
+    display: block;
+    font-size: 52px;
+    color: transparent;
+  }
+
+  body::before,
+  body::after {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 3em;
+    height: 3em;
+    content: ".";
+    mix-blend-mode: screen;
+    animation: 44s -27s move infinite ease-in-out alternate;
+  }
+
+  body::before {
+    text-shadow: 1.0006004503em -0.1522617938em 7px rgba(0, 255, 117, 0.9), 1.6807052409em 1.7588609711em 7px rgba(0, 129, 255, 0.9), -0.4081066892em 1.3106989016em 7px rgba(0, 255, 149, 0.9), 2.39913786em 0.4167149692em 7px rgba(255, 20, 0, 0.9), -0.3423325121em 1.3160767249em 7px rgba(255, 0, 218, 0.9), 0.349043978em 0.1477866089em 7px rgba(227, 0, 255, 0.9), 1.7939357074em -0.3763991236em 7px rgba(0, 214, 255, 0.9), -0.0916116183em 1.0153043792em 7px rgba(255, 242, 0, 0.9), 0.9480505544em 0.3253783287em 7px rgba(0, 60, 255, 0.9), 0.1126822792em 0.5678549331em 7px rgba(63, 255, 0, 0.9), 1.1986327786em -0.0832476702em 7px rgba(72, 0, 255, 0.9), -0.0454275479em 0.9652925471em 7px rgba(255, 19, 0, 0.9), 1.9028146385em 0.0859750456em 7px rgba(0, 69, 255, 0.9), 0.1072437599em 2.4162987455em 7px rgba(0, 219, 255, 0.9), -0.2350798581em 0.0695018619em 7px rgba(255, 0, 164, 0.9), 0.5979274051em 1.3165168047em 7px rgba(121, 0, 255, 0.9), 0.0485593237em 1.7413508363em 7px rgba(0, 255, 73, 0.9), 2.119722845em 2.4451331869em 7px rgba(11, 0, 255, 0.9), 1.0636813002em 1.4687601939em 7px rgba(0, 191, 255, 0.9), 1.5942897424em 1.5643566365em 7px rgba(0, 79, 255, 0.9), 2.3653112117em 1.9357356962em 7px rgba(255, 0, 238, 0.9), -0.1415574419em 0.7769938703em 7px rgba(255, 0, 47, 0.9), 0.1076235723em 1.4223887097em 7px rgba(255, 132, 0, 0.9), 1.121442635em 1.6678804673em 7px rgba(0, 129, 255, 0.9), 1.831416583em 1.0007033925em 7px rgba(70, 255, 0, 0.9), 1.2610777764em -0.0465761515em 7px rgba(0, 255, 127, 0.9), 0.4921967134em 2.0546073575em 7px rgba(255, 55, 0, 0.9), 2.2398426138em 1.9603013486em 7px rgba(255, 224, 0, 0.9), 0.2903106398em 2.0834410411em 7px rgba(63, 0, 255, 0.9), 1.8522953865em 1.0238083595em 7px rgba(255, 0, 141, 0.9), 2.2639471912em 2.4855314457em 7px rgba(255, 0, 246, 0.9), -0.0330123681em 1.8807534792em 7px rgba(255, 0, 13, 0.9), 0.3677037315em 1.0924282746em 7px rgba(198, 255, 0, 0.9), 0.5875949622em 1.3493784515em 7px rgba(0, 65, 255, 0.9), 1.1636156662em 2.017633594em 7px rgba(134, 255, 0, 0.9), 0.4201209489em 0.3993769541em 7px rgba(50, 0, 255, 0.9), 0.3121127118em -0.3289119105em 7px rgba(0, 255, 70, 0.9), -0.4808742653em -0.1979541274em 7px rgba(0, 111, 255, 0.9), -0.4417418766em 0.0159431782em 7px rgba(0, 255, 162, 0.9), 1.5162129184em 1.7983777862em 7px rgba(0, 190, 255, 0.9), 1.3875788225em -0.3654267334em 7px rgba(12, 255, 0, 0.9);
+    animation-duration: 44s;
+    animation-delay: -27s;
+  }
+
+  body::after {
+    text-shadow: 1.826811877em 0.7125380866em 7px rgba(255, 2, 0, 0.9), 1.8758330385em 0.1048509983em 7px rgba(57, 255, 0, 0.9), 1.9196009797em 2.1695591449em 7px rgba(0, 36, 255, 0.9), -0.0451161689em -0.3173193703em 7px rgba(52, 255, 0, 0.9), 1.242888275em -0.0469427128em 7px rgba(0, 13, 255, 0.9), 0.4705304597em 0.9136194615em 7px rgba(255, 165, 0, 0.9), 0.5522896873em -0.0140604669em 7px rgba(0, 255, 73, 0.9), 1.0051565588em -0.4922416639em 7px rgba(255, 191, 0, 0.9), 1.3145374733em 1.1860577018em 7px rgba(0, 91, 255, 0.9), 0.235886633em 2.1880613279em 7px rgba(255, 0, 69, 0.9), -0.2962304347em 2.2945771377em 7px rgba(255, 0, 32, 0.9), 0.0156125713em 1.3675568003em 7px rgba(209, 255, 0, 0.9), 0.8809681585em 1.3122319688em 7px rgba(0, 255, 233, 0.9), 2.3479620522em 2.3709533749em 7px rgba(241, 255, 0, 0.9), 0.6244508735em 2.3262570531em 7px rgba(182, 255, 0, 0.9), 0.8222953255em 2.1765819673em 7px rgba(0, 131, 255, 0.9), 1.0247274452em 0.4477933435em 7px rgba(255, 76, 0, 0.9), -0.0209587373em 2.4068936801em 7px rgba(255, 248, 0, 0.9), 0.6142595612em 0.8612368138em 7px rgba(165, 0, 255, 0.9), 2.0081767055em 1.3625608291em 7px rgba(0, 252, 255, 0.9), 2.009169978em 0.2355587752em 7px rgba(17, 0, 255, 0.9), 2.4685399878em 2.3150193555em 7px rgba(0, 255, 168, 0.9), 2.4086441307em -0.1968039638em 7px rgba(255, 0, 168, 0.9), 2.4726404057em 0.3553923387em 7px rgba(0, 255, 67, 0.9), -0.0974018423em -0.2211838953em 7px rgba(255, 31, 0, 0.9), 2.3610196263em 1.3897619177em 7px rgba(224, 255, 0, 0.9), 0.9706322979em 2.1321545944em 7px rgba(115, 0, 255, 0.9), 0.8860065346em 0.9467873661em 7px rgba(0, 187, 255, 0.9), 1.9074546958em 0.8319611134em 7px rgba(255, 0, 86, 0.9), 2.1679902277em -0.0665842719em 7px rgba(255, 9, 0, 0.9), -0.0340266195em -0.1816957328em 7px rgba(255, 108, 0, 0.9), 1.4491744108em -0.2031561103em 7px rgba(0, 177, 255, 0.9), -0.0724953336em 2.2281431877em 7px rgba(206, 0, 255, 0.9), -0.1873719997em 1.9917221112em 7px rgba(204, 0, 255, 0.9), 2.183628794em -0.4940715451em 7px rgba(242, 255, 0, 0.9), 0.0685768529em 1.1000362329em 7px rgba(192, 255, 0, 0.9), 1.9774943946em 0.9397270482em 7px rgba(21, 0, 255, 0.9), 1.80702021em 1.7445951105em 7px rgba(0, 179, 255, 0.9), 1.2982439991em 1.0956656756em 7px rgba(255, 11, 0, 0.9), 1.348408966em 2.0175207703em 7px rgba(167, 0, 255, 0.9), 1.3894147968em 2.1822249339em 7px rgba(0, 131, 255, 0.9);
+    animation-duration: 43s;
+    animation-delay: -32s;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg) scale(12) translateX(-20px);
+    }
+
+    to {
+      transform: rotate(360deg) scale(18) translateX(20px);
+    }
+  }
+
+  * {
+    font-family: "Tilt Prism", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: 400; */
+    font-style: normal;
+  }
 
   .char {
     transform: translateY(115px);
     transition: transform .5s;
   }
 
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
+  .title-cont {
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
 
   #titleFit {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -66,6 +116,8 @@
     font-style: normal;
     font-size: 5rem;
     color: white;
+    position: relative;
+    text-align: center;
   }
 
   html {
@@ -250,8 +302,7 @@
       style="background: #23314F; backdrop-filter: blur(0.2rem); z-index: 1000;">
       <div class="container-fluid">
         <div class="navbar-brand">
-          <a href="https://himainfra.petra.ac.id/index.php"
-            style="color: white; text-decoration: none;font-size: 50px;">
+          <a href="#" style="color: white; text-decoration: none;font-size: 50px;">
             JoFit
           </a>
         </div>
@@ -268,7 +319,10 @@
           <ul class="navbar-nav mb-2 mb-lg-0">
 
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="" style="font-size: 1.5rem;">Download</a>
+              <a class="nav-link active" aria-current="page" href="" style="font-size: 1.5rem; font-family: 'Tilt Prism', sans-serif;
+              font-optical-sizing: auto;
+              font-weight: 400;
+              font-style: normal;">Download</a>
             </li>
           </ul>
         </div>
@@ -276,12 +330,21 @@
     </nav>
 
 
-    <div id="titleFit">JoFit</div>
-    <!-- <div class="container">
-      <div class="kfw-cutom-heading-wrap">
-        <h1>Sunny Mornings</h1>
+    <div class="title-cont">
+      <div id="titleFit">Welcome to JoFit</div>
+    </div>
+
+    <div class="card-cont">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body" style="padding: 20px;">
+          <p style="font-size: 20px; font-weight: bold;">Title</p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+        <button class="card-button">More info</button>
       </div>
-    </div> -->
+    </div>
 
     <script defer src="/src/js/material.min.js"></script>
     <script src="/src/js/promise.js"></script>
