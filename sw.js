@@ -6,6 +6,7 @@ var CACHE_DYNAMIC_NAME = 'dynamic-v2';
 var STATIC_FILES = [
   '/',
   '/index.html',
+  '/details.html',
   '/offline.html',
   '/src/js/app.js',
   '/src/js/feed.js',
@@ -15,7 +16,8 @@ var STATIC_FILES = [
   '/src/js/material.min.js',
   '/src/css/app.css',
   '/src/css/feed.css',
-  '/src/images/main-image.jpg',
+  '/src/images/wlpp.jpg',
+  '/src/images/error.png',
   'https://fonts.googleapis.com/css?family=Roboto:400,700',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
   'https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css'
@@ -74,7 +76,7 @@ function isInArray(string, array) {
 
 self.addEventListener('fetch', function (event) {
 
-  var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json';
+  var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/posts';
   if (event.request.url.indexOf(url) > -1) {
     event.respondWith(fetch(event.request)
       .then(function (res) {
@@ -124,3 +126,59 @@ self.addEventListener('fetch', function (event) {
     );
   }
 });
+
+// self.addEventListener('fetch', function(event) {
+//   event.respondWith(
+//     caches.match(event.request)
+//       .then(function(response) {
+//         if (response) {
+//           return response;
+//         } else {
+//           return fetch(event.request)
+//             .then(function(res) {
+//               return caches.open(CACHE_DYNAMIC_NAME)
+//                 .then(function(cache) {
+//                   cache.put(event.request.url, res.clone());
+//                   return res;
+//                 })
+//             })
+//             .catch(function(err) {
+//               return caches.open(CACHE_STATIC_NAME)
+//                 .then(function(cache) {
+//                   return cache.match('/offline.html');
+//                 });
+//             });
+//         }
+//       })
+//   );
+// });
+
+// self.addEventListener('fetch', function(event) {
+//   event.respondWith(
+//     fetch(event.request)
+//       .then(function(res) {
+//         return caches.open(CACHE_DYNAMIC_NAME)
+//                 .then(function(cache) {
+//                   cache.put(event.request.url, res.clone());
+//                   return res;
+//                 })
+//       })
+//       .catch(function(err) {
+//         return caches.match(event.request);
+//       })
+//   );
+// });
+
+// Cache-only
+// self.addEventListener('fetch', function (event) {
+//   event.respondWith(
+//     caches.match(event.request)
+//   );
+// });
+
+// Network-only
+// self.addEventListener('fetch', function (event) {
+//   event.respondWith(
+//     fetch(event.request)
+//   );
+// });
