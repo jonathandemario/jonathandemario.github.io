@@ -218,6 +218,8 @@
   }
 </style>
 
+
+
 <body>
 
 
@@ -250,6 +252,13 @@
         </div>
       </div>
     </nav>
+
+    <div class="container">
+      <div class="kfw-cutom-heading-wrap">
+        <h1>Sunny Mornings</h1>
+      </div>
+    </div>
+
     <script defer src="/src/js/material.min.js"></script>
     <script src="/src/js/promise.js"></script>
     <script src="/src/js/fetch.js"></script>
@@ -263,6 +272,30 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(SplitText);
+
+      let $h1 = document.querySelector("h1");
+      let $split = new SplitText($h1, {
+        type: "lines,words,chars"
+      });
+
+      gsap.set($split.chars, { perspective: 500 });
+      let $tween = gsap.from($split.chars, {
+        duration: 0.5,
+        scale: 4,
+        autoAlpha: 0,
+        ease: "back",
+        stagger: 0.02
+      });
+
+      document.getElementById("replay").onclick = function () {
+        $tween.restart();
+      };
+    </script>
 </body>
 
 </html>
