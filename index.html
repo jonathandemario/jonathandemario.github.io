@@ -46,58 +46,33 @@
 </head>
 
 <body>
-  <div id="app">
-    <div class="header-border" style="z-index: 1000;">
-      <nav class="navbar navbar-expand-lg navbar-custom bg-dark bg-opacity-50"
-        style="background: #23314F; backdrop-filter: blur(0.2rem); z-index: 1000;">
-        <div class="container-fluid">
-          <div class="navbar-brand">
-            <a href="https://www.instagram.com/himainfraukp" target="_blank">
-              <img src="https://himainfra.petra.ac.id/assets/imgs/logo-web.png" width="50px" height="50px" alt="">
-            </a>
-            <a href="https://himainfra.petra.ac.id/index.php"
-              style="color: white; text-decoration: none;font-family: 'Alphakind', sans-serif;">
-              HIMAINFRA
-              <!-- <img src="assets/ukp outline.png" width="60px" height="60px" alt=""> -->
-            </a>
-          </div>
-
-          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="navbar-collapse collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-
-            <ul class="navbar-nav mb-2 mb-lg-0">
-
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="https://himainfra.petra.ac.id/">HOME</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="https://himainfra.petra.ac.id/index.php#visi-misi" role="page">VISI & MISI</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="https://himainfra.petra.ac.id/department/index.php" role="page">DEPARTEMEN</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="https://himainfra.petra.ac.id/events/index.php" role="page">EVENTS OF THE
-                  WEEK</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="https://himainfra.petra.ac.id/aspirasi/index.php" role="page">ASPIRASI</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
     </div>
+  </nav>
+  <div id="app">
+    
   </div>
   <script defer src="/src/js/material.min.js"></script>
   <script src="/src/js/promise.js"></script>
