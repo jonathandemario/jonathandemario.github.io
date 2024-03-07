@@ -46,175 +46,226 @@
 </head>
 
 <style>
-  html {
-    scroll-behavior: smooth;
+  @font-face {
+      font-family: 'SuperMario256';
+      src: url('assets/font/SuperMario256.ttf');
   }
 
-  a {
-    text-decoration: none;
+  @font-face {
+      font-family: 'Alphakind';
+      src: url('assets/font/Alphakind.otf');
+  }
+
+  * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Alphakind', sans-serif;
   }
 
   body {
-    background-color: black;
+      height: 100vh;
+      width: 100%;
   }
 
-  body::-webkit-scrollbar {
-    width: 10px;
-    background-color: #23314F;
+  .background {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/img/background.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: repeat-y;
+      z-index: -1;
+      filter: brightness(60%);
   }
 
-  body::-webkit-scrollbar-thumb {
-    background-color: #FA1E25;
-    border-radius: 10px;
-    outline: 3px solid #16160e;
-    box-shadow: 6px 6px 0px #16160e;
+  .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 100px;
   }
 
-  .navbar-custom {
-    padding: 3px 12px;
-    position: relative;
-    height: 80px;
-  }
-
-  .navbar-custom .navbar-brand img {
-    /* width: 70px;
-        position: absolute;
-        top: 4px; */
-    transition: .5s linear;
-  }
-
-  .navbar-brand img:hover {
-    box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-    -webkit-box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-    -moz-box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-    transition: .5s linear;
-  }
-
-  .navbar-custom .navbar-toggler {
-    border: 1px solid #fff;
-  }
-
-  .navbar-custom .navbar-toggler span {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  }
-
-  .border-bottom-s {
-    height: 20px;
-  }
-
-  .header-border {
-    box-shadow: -1px 8px 15px -2px rgba(0, 0, 0, .5);
-    /* border-bottom: 2px solid #fdc006; */
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .navbar-custom .navbar-nav .nav-item {
-    margin: 0 6px;
-  }
-
-  .navbar-custom .navbar-nav .nav-item .nav-link {
-    text-align: center;
-    color: #fff;
-    padding: 12px;
-    border-radius: 10px;
-    position: relative;
-    top: 0;
-    font-family: 'Alphakind', sans-serif;
-  }
-
-  .navbar-custom .navbar-nav .nav-item .border-white {
-    position: relative;
-    border-radius: 10px;
-  }
-
-  .nav-item {
-    transition: .5s linear;
-  }
-
-  .nav-item:hover {
-    box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-    -webkit-box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-    -moz-box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-    transition: .5s linear;
-  }
-
-
-  .dropdown-menu {
-    background: rgba(35, 49, 69, 1);
-    box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-    -webkit-box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-    -moz-box-shadow: 0px 0px 272px -10px rgba(255, 255, 255, 0.23);
-
-    /* opacity: 0; */
-    /* transition: .2 linear; */
-    animation: showdropdown .5s linear;
-
-  }
-
-  a.dropdown-item {
-    color: white;
-    /* transition: .2 linear; */
-  }
-
-  @keyframes showdropdown {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @media screen and (min-width: 991.9px) {
-    .dropdown-menu#event {
-      margin-left: -25px;
-      margin-top: 10px;
-    }
-
-    .dropdown-menu#regist {
-      margin-left: -50px;
-      margin-top: 10px;
-    }
-  }
-
-  @media screen and (max-width: 1150px) {
-    .navbar-custom .navbar-nav .nav-item .nav-link {
-      padding: 7px;
-    }
-  }
-
-  @media screen and (max-width: 991.9px) {
-    .navbar-custom {
-      padding: 0 6px
-    }
-
-    .navbar-custom .navbar-brand img.logo {
-      position: relative;
+  .container:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      left: 0;
       top: 0;
-      left: -7px
-    }
+      background-size: cover;
+      z-index: -1;
+      background-attachment: fixed;
+  }
 
-    .navbar-custom .navbar-collapse {
-      margin-top: 50px;
-      background: rgba(35, 49, 79, .5);
+  .contact-box {
+      margin-top: 60px;
+      max-width: 850px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: -10px 10px 19px 5px rgba(0, 0, 0, 0.8);
+      border-radius: 20px;
+  }
+
+  .left {
+      background: url("assets/img/left.png") no-repeat center;
+      background-size: cover;
+      height: 100%;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+  }
+
+  .right {
+      padding: 25px 40px;
+  }
+
+  h1 {
+      position: relative;
+      padding: 0 0 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-family: 'SuperMario256', sans-serif;
+      color: rgb(255, 200, 0) !important;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: black;
+      letter-spacing: 4px;
+      font-size: 38px;
+  }
+
+  h1:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      height: 4px;
+      width: 50px;
+      border-radius: 2px;
+      background-color: darkred;
+  }
+
+  .label-font {
+      font-size: 1.3rem;
+  }
+
+  .field {
+      width: 100%;
+      border: 2px solid rgba(0, 0, 0, 0);
+      outline: none;
+      background-color: rgba(230, 230, 230, 0.6);
+      padding: 0.5rem 1rem;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      margin-bottom: 22px;
+      transition: 0.3s;
       border-radius: 8px;
-      box-shadow: 0 0 5px #555;
-    }
+  }
 
-    .navbar-custom .navbar-toggler:focus {
-      outline: none !important;
-      box-shadow: none !important;
-    }
+  .field:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+  }
 
-    .navbar-custom .navbar-nav .nav-item .nav-link {
-      border-radius: 12px;
-      padding: 12px;
-      text-align: left;
-    }
+  textarea {
+      min-height: 150px;
+      border-radius: 8px;
+  }
+
+  .btn.submit {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      background-color: darkred;
+      color: #fff;
+      letter-spacing: 3px;
+      font-size: 1.1rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 8px;
+  }
+
+  .btn.submit:hover {
+      background-color: darkslateblue;
+  }
+
+  .field:focus {
+      border: 2px solid rgba(30, 85, 250, 0.47);
+      background-color: #fff;
+  }
+
+  @media screen and (max-width: 1000px) {
+      body {
+          min-height: 100vh;
+      }
+
+      .container {
+          padding: 20px 40px;
+      }
+
+      .contact-box {
+          max-width: 100%;
+          grid-template-columns: 1fr;
+          border-radius: 10px;
+          margin-top: 80px;
+      }
+
+      .left {
+          height: 30vh;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 0px;
+      }
+
+      .right {
+          padding: 15px 20px;
+      }
+  }
+
+  .hidden {
+      display: none;
+  }
+
+  @media screen and (max-width: 500px) {
+      textarea {
+          min-height: 90px;
+      }
+
+      .contact-box {
+          margin-top: 5vh !important;
+          /* margin-bottom: 10vh; */
+      }
+  }
+
+  @media screen and (max-width: 400px) {
+      .left {
+          height: 25vh;
+      }
+
+      textarea {
+          min-height: 90px;
+      }
+
+      .contact-box {
+          margin-top: 10vh !important;
+          /* margin-bottom: 10vh; */
+      }
+  }
+
+  @media screen and (max-width: 370px) {
+      .container {
+          height: 105vh;
+      }
+
+      .contact-box {
+          margin-top: 12vh !important;
+          /* margin-bottom: 10vh; */
+      }
   }
 </style>
 
