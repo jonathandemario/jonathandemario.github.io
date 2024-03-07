@@ -17,9 +17,7 @@ var STATIC_FILES = [
   '/src/css/feed.css',
   'https://fonts.googleapis.com',
   'https://fonts.gstatic.com',
-  'https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap',
-  '/src/css/bootstrap.min.css',
-  '/src/js/bootstrap.bundle.min.js'
+  'https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap'
 ];
 
 // function trimCache(cacheName, maxItems) {
