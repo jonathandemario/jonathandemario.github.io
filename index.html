@@ -31,6 +31,10 @@
   <meta name="msapplication-TileColor" content="#fff">
   <meta name="theme-color" content="#3f51b5">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+
   <!-- BOOTSTRAP -->
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
@@ -45,6 +49,24 @@
       font-family: 'Alphakind';
       src: url('assets/Alphakind.otf');
   } */
+
+  .char {
+    transform: translateY(115px);
+    transition: transform .5s;
+  }
+
+
+
+  #titleFit {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    line-height: 5.9rem;
+    font-family: "Tilt Prism", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+    color: white;
+  }
 
   html {
     scroll-behavior: smooth;
@@ -253,11 +275,13 @@
       </div>
     </nav>
 
-    <div class="container">
+
+    <div id="titleFit">JoFit</div>
+    <!-- <div class="container">
       <div class="kfw-cutom-heading-wrap">
         <h1>Sunny Mornings</h1>
       </div>
-    </div>
+    </div> -->
 
     <script defer src="/src/js/material.min.js"></script>
     <script src="/src/js/promise.js"></script>
@@ -268,34 +292,25 @@
     <script src="/src/js/feed.js"></script>
     <script src="/src/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- BOOTSTRAP -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
-
     <script>
-      gsap.registerPlugin(SplitText);
+      let text = new SplitType('#titleFit');
 
-      let $h1 = document.querySelector("h1");
-      let $split = new SplitText($h1, {
-        type: "lines,words,chars"
+      gsap.to('.char', {
+        y: 0,
+        stagger: 0.05,
+        delay: 0.02,
+        duration: 0.5
       });
-
-      gsap.set($split.chars, { perspective: 500 });
-      let $tween = gsap.from($split.chars, {
-        duration: 0.5,
-        scale: 4,
-        autoAlpha: 0,
-        ease: "back",
-        stagger: 0.02
-      });
-
-      document.getElementById("replay").onclick = function () {
-        $tween.restart();
-      };
     </script>
 </body>
 
