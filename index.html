@@ -6,7 +6,7 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Yuk Fitness</title>
+  <title>HOME|JoFit</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet"
@@ -98,7 +98,7 @@
 </style>
 
 <body>
-  <div class="header-border" style="z-index: 1000;">
+  <div class="header-border sticky-top" style="z-index: 1000;">
     <nav class="navbar navbar-expand-lg navbar-custom bg-dark bg-opacity-10"
       style="backdrop-filter: blur(0.2rem); z-index: 1000;">
       <div class="container-fluid">
@@ -129,21 +129,21 @@
       </div>
     </nav>
   </div>
-  <div id="app">
+  <div class="text-light text-center mt-2 m-0 p-0" style="font-size: clamp(30px, 4.5vw, 100px); font-weight: bold;"
+    data-aos="fade-left" id="fitBrand">Fitness App</div>
+  <div class="text-light text-center m-0 p-0" style="font-size: clamp(20px, 1vw, 100px); font-weight: bold;"
+    data-aos="fade-left">5,538 inspirational workouts from the world’s best athletes.</div>
+
+  <div id="shared-moments" class="p-5"></div>
+  <!-- <div id="app">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <main class="mdl-layout__content mat-typography">
         <div class="page-content">
-          <div class="text-light text-center mt-2 m-0 p-0"
-            style="font-size: clamp(30px, 4.5vw, 100px); font-weight: bold;" data-aos="fade-left" id="fitBrand">Fitness
-            App</div>
-          <div class="text-light text-center m-0 p-0" style="font-size: clamp(20px, 1vw, 100px); font-weight: bold;"
-            data-aos="fade-left">5,538 inspirational workouts from the world’s best athletes.</div>
 
-          <div id="shared-moments" class="p-5"></div>
         </div>
       </main>
     </div>
-  </div>
+  </div> -->
   <script defer src="/src/js/material.min.js"></script>
   <script src="/src/js/promise.js"></script>
   <script src="/src/js/fetch.js"></script>
@@ -220,6 +220,7 @@
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
+
   .card {
     background: #f5f5f5;
     position: relative;
