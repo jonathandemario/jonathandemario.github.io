@@ -205,7 +205,21 @@
     function downloadApp() {
       if (/iPhone/.test(navigator.userAgent)) {
         // Code specific to iPhones
-        alert("You're using an iPhone. Please follow the instructions to add the app to your home screen.");
+        if (navigator.share) {
+          navigator.share({
+            title: 'Your Web App',
+            text: 'Check out this cool web app!',
+            url: window.location.href
+          }).then(() => {
+            console.log('Web app shared successfully');
+          }).catch((error) => {
+            console.error('Error sharing web app:', error);
+          });
+        } else {
+          // alert('Your browser does not support sharing.');
+          // Provide fallback instructions for users to manually share the app URL.
+        }
+        // alert("You're using an iPhone. Please follow the instructions to add the app to your home screen.");
       } else {
         if (deferredPrompt) {
           deferredPrompt.prompt();
