@@ -100,7 +100,7 @@
 <body>
   <div class="header-border sticky-top" style="z-index: 1000;">
     <nav class="navbar navbar-expand-lg navbar-custom bg-dark bg-opacity-50"
-      style="backdrop-filter: blur(0.4rem); z-index: 1000; -webkit-backdrop-filter: blur(0.4rem);">
+      style="backdrop-filter: blur(0.5rem); z-index: 1000; -webkit-backdrop-filter: blur(0.5rem);">
       <div class="container-fluid">
         <div class="navbar-brand">
           <a href="#"
@@ -129,21 +129,20 @@
       </div>
     </nav>
   </div>
-  <div class="text-light text-center mt-2 m-0 p-0" style="font-size: clamp(30px, 4.5vw, 100px); font-weight: bold;"
-    data-aos="fade-left" id="fitBrand">Fitness App</div>
-  <div class="text-light text-center m-0 p-0" style="font-size: clamp(20px, 1vw, 100px); font-weight: bold;"
-    data-aos="fade-left">5,538 inspirational workouts from the world’s best athletes.</div>
-
-  <div id="shared-moments" class="p-5"></div>
-  <!-- <div id="app">
+  <div id="app">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <main class="mdl-layout__content mat-typography">
         <div class="page-content">
+          <div class="text-light text-center mt-2 m-0 p-0"
+            style="font-size: clamp(30px, 4.5vw, 100px); font-weight: bold;" data-aos="fade-left" id="fitBrand">Fitness App</div>
+          <div class="text-light text-center m-0 p-0" style="font-size: clamp(20px, 1vw, 100px); font-weight: bold;"
+            data-aos="fade-left">5,538 inspirational workouts from the world’s best athletes.</div>
 
+          <div id="program" class="p-5"></div>
         </div>
       </main>
     </div>
-  </div> -->
+  </div>
   <script defer src="/src/js/material.min.js"></script>
   <script src="/src/js/promise.js"></script>
   <script src="/src/js/fetch.js"></script>
@@ -220,7 +219,6 @@
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
-
   .card {
     background: #f5f5f5;
     position: relative;

@@ -1,9 +1,9 @@
-var sharedMomentsArea = document.querySelector('#shared-moments');
+var program = document.querySelector('#program');
 
 // Currently not in use, allows to save assets in cache on demand otherwise
 function clearCards() {
-  while (sharedMomentsArea.hasChildNodes()) {
-    sharedMomentsArea.removeChild(sharedMomentsArea.lastChild);
+  while (program.hasChildNodes()) {
+    program.removeChild(program.lastChild);
   }
 }
 
@@ -14,17 +14,6 @@ function updateUI(data) {
     if (i % 4 == 0) {
       cardWrapper += '<div class="row" style="justify-content:center; ">';
     }
-    // cardWrapper += `
-    // <div class="text-light col-lg-4 col-md-6 col-sm-12 pb-5">
-    //       <div data-id ="`+data[i].id+`" class="card border-1" style="width: 100%; max-height: 300px;">
-    //         <img class="card-img-top rounded" style="height: 15em; object-fit: cover;" src="`+data[i].image+`" alt="Card image cap">
-    //         <div class="card-body">
-    //           `+data[i].title+`
-    //         </div>
-    //       </div>
-    //   </div>
-    // `;
-
     cardWrapper += `
     <div class="text-light col-lg-3 col-md-6 col-sm-12 pb-5">
       <div class="card border-1" data-id ="`+data[i].id+`" style="width: 100%; max-height: 350px;">
@@ -46,7 +35,7 @@ function updateUI(data) {
       cardWrapper += '</div>';
     }
   }
-  sharedMomentsArea.innerHTML += (cardWrapper);
+  program.innerHTML += (cardWrapper);
 }
 
 var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json';
@@ -67,7 +56,6 @@ fetch(url)
   });
 
 if ('indexedDB' in window) {
-  // alert("tes")
   readAllData('posts')
     .then(function (data) {
       if (!networkDataReceived) {
