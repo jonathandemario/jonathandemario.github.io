@@ -94,14 +94,13 @@
       AOS.init();
     </script>
     <script>
-        if(!localStorage.getItem('curPage')){
+        if(!localStorage.getItem('active')){
             window.location.href= '/offline.html'
         }
-        var dataPage = JSON.parse(localStorage.getItem('curPage'));
-        $('#title').html( dataPage.title);
-        $('#description').html( dataPage.description ?? 'No description');
+        var dataPage = JSON.parse(localStorage.getItem('active'));
+        $('#title').html(dataPage.title);
+        $('#description').html(dataPage.description);
         $('#img').attr('src', dataPage.image);
-        $('#imgUser').attr('src', dataPage.userImage);
 
         function downloadApp() {
             if (deferredPrompt) {
