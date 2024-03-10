@@ -6,7 +6,7 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>HOME|JoFit</title>
+  <title>Home | JoFit</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet"
@@ -100,15 +100,21 @@
 
 <body>
   <div class="background"></div>
-  <div class="header-border sticky-top" style="z-index: 1000;">
+  <div class="header-border sticky-top" style="z-index: 1000;" data-aos="fade-down">
     <nav class="navbar navbar-expand-lg navbar-custom bg-dark bg-opacity-50"
       style="backdrop-filter: blur(0.5rem); z-index: 1000; -webkit-backdrop-filter: blur(0.5rem);">
-      <div class="container-fluid">
+      <div class="container-fluid" style="justify-content: space-between;padding-left: 30px; padding-right: 30px;">
+        <div class="navbar-brand">
+          <a href="#"
+            style="color: white; text-decoration: none;font-size: clamp(30px, 2vw, 100px); font-weight: bold;">
+            JoFit
+          </a>
+        </div>
+
         <div class="navbar-brand">
           <a href="#"
             style="color: white; text-decoration: none;font-size: clamp(30px, 2vw, 100px); font-weight: bold;">
             <img src="/src/images/icons/icon-72x72.png" alt="" style="width: 50px; height: 50px;">
-            JoFit
           </a>
         </div>
 
@@ -133,13 +139,26 @@
     </nav>
   </div>
   <div id="app" style="z-index: 1001;">
-    <div class="text-light text-center mt-2 m-0 p-0" data-aos="fade-left" id="fitBrand">
+    <div class="text-light text-center mt-2 m-0 p-0" id="fitBrand">
       <h1 style="font-size: clamp(30px, 4.5vw, 100px); font-weight: bold; margin-top: 20px;">JoFit's World</h1>
     </div>
     <div class="text-light text-center m-0 p-0" style="font-size: clamp(20px, 1vw, 100px); font-weight: bold;"
-      data-aos="fade-left">5,538 inspirational workouts from the world’s best athletes.</div>
+      data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1500"><span class="counter" style="font-size: clamp(20px, 1vw, 100px); font-weight: bold;">5,538</span> inspirational
+      workouts from the world’s best athletes.</div>
 
-    <div id="program" class="p-5"></div>
+    <div id="program" class="p-5" data-aos="zoom-in" data-aos-delay="1300" data-aos-duration="1500">
+      <div class="hourglassBackground">
+        <div class="hourglassContainer">
+          <div class="hourglassCurves"></div>
+          <div class="hourglassCapTop"></div>
+          <div class="hourglassGlassTop"></div>
+          <div class="hourglassSand"></div>
+          <div class="hourglassSandStream"></div>
+          <div class="hourglassCapBottom"></div>
+          <div class="hourglassGlass"></div>
+        </div>
+      </div>
+    </div>
   </div>
   <script defer src="/src/js/material.min.js"></script>
   <script src="/src/js/promise.js"></script>
@@ -170,6 +189,29 @@
     });
   </script>
   <script>
+    $(document).ready(function () {
+      let valueDisplays = document.querySelectorAll(".counter");
+      let interval = 5500;
+
+      valueDisplays.forEach((valueDisplay) => {
+        let startValue = 0;
+        let endValue = 5538;
+        let incrementAmount = 10; // Amount to increment in each step
+        let duration = Math.floor(interval / (endValue));
+        let counter = setInterval(function () {
+          startValue += incrementAmount; // Increment by 100
+          if (startValue >= endValue) { // Adjusted condition to handle increment of 100
+            startValue = endValue; // Ensure we don't overshoot the end value
+            clearInterval(counter);
+          }
+          valueDisplay.textContent = numberWithCommas(startValue);
+        }, duration);
+      });
+
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+    })
     $(document).on("click", ".card", function () {
       var id = $(this).data('id'); // Use var/let/const to declare id to avoid polluting global scope
       var url = 'https://ambwku-74104-default-rtdb.asia-southeast1.firebasedatabase.app/posts/' + id + '.json';
