@@ -6,7 +6,7 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>HOME|JoFit</title>
+  <title>Detail | JoFit</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet"
@@ -100,15 +100,22 @@
 
 <body>
   <div class="background"></div>
-  <div class="header-border sticky-top" style="z-index: 1000;">
+  <div class="header-border sticky-top" style="z-index: 1000;" data-aos="fade-down">
     <nav class="navbar navbar-expand-lg navbar-custom bg-dark bg-opacity-50"
       style="backdrop-filter: blur(0.5rem); z-index: 1000; -webkit-backdrop-filter: blur(0.5rem);">
-      <div class="container-fluid">
+      <div class="container-fluid d-flex"
+        style="justify-content: space-between;padding-left: 30px; padding-right: 30px; align-items: center;">
         <div class="navbar-brand">
           <a href="#"
             style="color: white; text-decoration: none;font-size: clamp(30px, 2vw, 100px); font-weight: bold;">
-            <img src="/src/images/icons/icon-72x72.png" alt="" style="width: 50px; height: 50px;">
             JoFit
+          </a>
+        </div>
+
+        <div class="navbar-brand logo">
+          <a href="#"
+            style="color: white; text-decoration: none;font-size: clamp(30px, 2vw, 100px); font-weight: bold;">
+            <img src="/src/images/icons/icon-72x72.png" alt="" style="width: 50px; height: 50px;">
           </a>
         </div>
 
@@ -122,12 +129,10 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 
           <ul class="navbar-nav mb-2 mb-lg-0">
-
             <li class="nav-item">
               <a href="#"
-                style="color: white; text-decoration: none;font-size: clamp(30px, 2vw, 100px); font-weight: bold;">
-                <img src="/src/images/icons/icon-72x72.png" alt="" style="width: 50px; height: 50px;">
-                JoFit
+                style="color: white; text-decoration: none;font-size: clamp(20px, 1vw, 50px); font-weight: bold;">
+                Home
               </a>
             </li>
           </ul>
@@ -153,7 +158,7 @@
                       Join</big></big></button>
               </div>
             </div>
-            <img class="mt-0 card-img-top" style="width: 100%; height: 100%; object-fit: cover;" src="" id="img"
+            <img class="mt-0 card-img-top" style="width: 50%; height: 50%; object-fit: cover;" src="" id="img"
               alt="Card image cap">
           </div>
         </div>
