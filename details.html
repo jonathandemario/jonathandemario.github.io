@@ -1,129 +1,213 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Yuk Fitness</title>
+  <title>HOME|JoFit</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
   <link rel="stylesheet" href="/src/css/app.css">
   <link rel="stylesheet" href="/src/css/feed.css">
   <link rel="manifest" href="/manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="PWAGram">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-57x57.png" sizes="57x57">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-60x60.png" sizes="60x60">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-72x72.png" sizes="72x72">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-76x76.png" sizes="76x76">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-114x114.png" sizes="114x114">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-120x120.png" sizes="120x120">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-144x144.png" sizes="144x144">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-152x152.png" sizes="152x152">
-  <link rel="apple-touch-icon" href="/src/images/icons/apple-icon-180x180.png" sizes="180x180">
-  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
-  <meta name="msapplication-TileColor" content="#fff">
-  <meta name="theme-color" content="#3f51b5">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-72x72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-128x128.png" sizes="128x128">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-144x144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-152x152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-256x256.png" sizes="256x256">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-384x384.png" sizes="384x384">
+  <link rel="apple-touch-icon" href="/src/images/icons/icon-512x512.png" sizes="512x512">
+  <meta name="msapplication-TileImage" content="/src/images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="theme-color" content="#000000">
+
+
   <!-- sweetalert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!--Jquery 3.6.0 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/aa7cfcad65.js" crossorigin="anonymous"></script>
-  <link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- aos -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
 
-<div id="app">
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: absolute; z-index: 100; width: 100%;">
+<style>
+  * {
+    font-size: 15px;
+  }
+
+  body {
+    background-color: black;
+  }
+
+  .background {
+    /* background-color: black; */
+    display: block;
+    font-size: 70px;
+    color: transparent;
+  }
+
+  .background::before,
+  .background::after {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 3em;
+    height: 3em;
+    content: ".";
+    mix-blend-mode: screen;
+    animation: 44s -27s move infinite ease-in-out alternate;
+  }
+
+  .background::before {
+    text-shadow: 1.0006004503em -0.1522617938em 7px rgba(0, 255, 117, 0.9), 1.6807052409em 1.7588609711em 7px rgba(0, 129, 255, 0.9), -0.4081066892em 1.3106989016em 7px rgba(0, 255, 149, 0.9), 2.39913786em 0.4167149692em 7px rgba(255, 20, 0, 0.9), -0.3423325121em 1.3160767249em 7px rgba(255, 0, 218, 0.9), 0.349043978em 0.1477866089em 7px rgba(227, 0, 255, 0.9), 1.7939357074em -0.3763991236em 7px rgba(0, 214, 255, 0.9), -0.0916116183em 1.0153043792em 7px rgba(255, 242, 0, 0.9), 0.9480505544em 0.3253783287em 7px rgba(0, 60, 255, 0.9), 0.1126822792em 0.5678549331em 7px rgba(63, 255, 0, 0.9), 1.1986327786em -0.0832476702em 7px rgba(72, 0, 255, 0.9), -0.0454275479em 0.9652925471em 7px rgba(255, 19, 0, 0.9), 1.9028146385em 0.0859750456em 7px rgba(0, 69, 255, 0.9), 0.1072437599em 2.4162987455em 7px rgba(0, 219, 255, 0.9), -0.2350798581em 0.0695018619em 7px rgba(255, 0, 164, 0.9), 0.5979274051em 1.3165168047em 7px rgba(121, 0, 255, 0.9), 0.0485593237em 1.7413508363em 7px rgba(0, 255, 73, 0.9), 2.119722845em 2.4451331869em 7px rgba(11, 0, 255, 0.9), 1.0636813002em 1.4687601939em 7px rgba(0, 191, 255, 0.9), 1.5942897424em 1.5643566365em 7px rgba(0, 79, 255, 0.9), 2.3653112117em 1.9357356962em 7px rgba(255, 0, 238, 0.9), -0.1415574419em 0.7769938703em 7px rgba(255, 0, 47, 0.9), 0.1076235723em 1.4223887097em 7px rgba(255, 132, 0, 0.9), 1.121442635em 1.6678804673em 7px rgba(0, 129, 255, 0.9), 1.831416583em 1.0007033925em 7px rgba(70, 255, 0, 0.9), 1.2610777764em -0.0465761515em 7px rgba(0, 255, 127, 0.9), 0.4921967134em 2.0546073575em 7px rgba(255, 55, 0, 0.9), 2.2398426138em 1.9603013486em 7px rgba(255, 224, 0, 0.9), 0.2903106398em 2.0834410411em 7px rgba(63, 0, 255, 0.9), 1.8522953865em 1.0238083595em 7px rgba(255, 0, 141, 0.9), 2.2639471912em 2.4855314457em 7px rgba(255, 0, 246, 0.9), -0.0330123681em 1.8807534792em 7px rgba(255, 0, 13, 0.9), 0.3677037315em 1.0924282746em 7px rgba(198, 255, 0, 0.9), 0.5875949622em 1.3493784515em 7px rgba(0, 65, 255, 0.9), 1.1636156662em 2.017633594em 7px rgba(134, 255, 0, 0.9), 0.4201209489em 0.3993769541em 7px rgba(50, 0, 255, 0.9), 0.3121127118em -0.3289119105em 7px rgba(0, 255, 70, 0.9), -0.4808742653em -0.1979541274em 7px rgba(0, 111, 255, 0.9), -0.4417418766em 0.0159431782em 7px rgba(0, 255, 162, 0.9), 1.5162129184em 1.7983777862em 7px rgba(0, 190, 255, 0.9), 1.3875788225em -0.3654267334em 7px rgba(12, 255, 0, 0.9);
+    animation-duration: 44s;
+    animation-delay: -27s;
+  }
+
+  .background::after {
+    text-shadow: 1.826811877em 0.7125380866em 7px rgba(255, 2, 0, 0.9), 1.8758330385em 0.1048509983em 7px rgba(57, 255, 0, 0.9), 1.9196009797em 2.1695591449em 7px rgba(0, 36, 255, 0.9), -0.0451161689em -0.3173193703em 7px rgba(52, 255, 0, 0.9), 1.242888275em -0.0469427128em 7px rgba(0, 13, 255, 0.9), 0.4705304597em 0.9136194615em 7px rgba(255, 165, 0, 0.9), 0.5522896873em -0.0140604669em 7px rgba(0, 255, 73, 0.9), 1.0051565588em -0.4922416639em 7px rgba(255, 191, 0, 0.9), 1.3145374733em 1.1860577018em 7px rgba(0, 91, 255, 0.9), 0.235886633em 2.1880613279em 7px rgba(255, 0, 69, 0.9), -0.2962304347em 2.2945771377em 7px rgba(255, 0, 32, 0.9), 0.0156125713em 1.3675568003em 7px rgba(209, 255, 0, 0.9), 0.8809681585em 1.3122319688em 7px rgba(0, 255, 233, 0.9), 2.3479620522em 2.3709533749em 7px rgba(241, 255, 0, 0.9), 0.6244508735em 2.3262570531em 7px rgba(182, 255, 0, 0.9), 0.8222953255em 2.1765819673em 7px rgba(0, 131, 255, 0.9), 1.0247274452em 0.4477933435em 7px rgba(255, 76, 0, 0.9), -0.0209587373em 2.4068936801em 7px rgba(255, 248, 0, 0.9), 0.6142595612em 0.8612368138em 7px rgba(165, 0, 255, 0.9), 2.0081767055em 1.3625608291em 7px rgba(0, 252, 255, 0.9), 2.009169978em 0.2355587752em 7px rgba(17, 0, 255, 0.9), 2.4685399878em 2.3150193555em 7px rgba(0, 255, 168, 0.9), 2.4086441307em -0.1968039638em 7px rgba(255, 0, 168, 0.9), 2.4726404057em 0.3553923387em 7px rgba(0, 255, 67, 0.9), -0.0974018423em -0.2211838953em 7px rgba(255, 31, 0, 0.9), 2.3610196263em 1.3897619177em 7px rgba(224, 255, 0, 0.9), 0.9706322979em 2.1321545944em 7px rgba(115, 0, 255, 0.9), 0.8860065346em 0.9467873661em 7px rgba(0, 187, 255, 0.9), 1.9074546958em 0.8319611134em 7px rgba(255, 0, 86, 0.9), 2.1679902277em -0.0665842719em 7px rgba(255, 9, 0, 0.9), -0.0340266195em -0.1816957328em 7px rgba(255, 108, 0, 0.9), 1.4491744108em -0.2031561103em 7px rgba(0, 177, 255, 0.9), -0.0724953336em 2.2281431877em 7px rgba(206, 0, 255, 0.9), -0.1873719997em 1.9917221112em 7px rgba(204, 0, 255, 0.9), 2.183628794em -0.4940715451em 7px rgba(242, 255, 0, 0.9), 0.0685768529em 1.1000362329em 7px rgba(192, 255, 0, 0.9), 1.9774943946em 0.9397270482em 7px rgba(21, 0, 255, 0.9), 1.80702021em 1.7445951105em 7px rgba(0, 179, 255, 0.9), 1.2982439991em 1.0956656756em 7px rgba(255, 11, 0, 0.9), 1.348408966em 2.0175207703em 7px rgba(167, 0, 255, 0.9), 1.3894147968em 2.1822249339em 7px rgba(0, 131, 255, 0.9);
+    animation-duration: 43s;
+    animation-delay: -32s;
+  }
+
+  @keyframes move {
+    from {
+      transform: rotate(0deg) scale(12) translateX(-20px);
+    }
+
+    to {
+      transform: rotate(360deg) scale(18) translateX(20px);
+    }
+  }
+</style>
+
+<body>
+  <div class="background"></div>
+  <div class="header-border sticky-top" style="z-index: 1000;">
+    <nav class="navbar navbar-expand-lg navbar-custom bg-dark bg-opacity-50"
+      style="backdrop-filter: blur(0.5rem); z-index: 1000; -webkit-backdrop-filter: blur(0.5rem);">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Yuk Fitness</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="navbar-brand">
+          <a href="#"
+            style="color: white; text-decoration: none;font-size: clamp(30px, 2vw, 100px); font-weight: bold;">
+            <img src="/src/images/icons/icon-72x72.png" alt="" style="width: 50px; height: 50px;">
+            JoFit
+          </a>
+        </div>
+
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+
+          <ul class="navbar-nav mb-2 mb-lg-0">
+
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="downloadApp()">App</a>
+              <button class="button" style="vertical-align:middle"
+                onclick="downloadApp()"><span>Download</span></button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <main class="mdl-layout__content mat-typography">
-      <div class="page-content">
-        <div class="containerr">
-            <div class="darken">
-                <div class="text-left ms-5 ps-5" style="font-size: 50px; font-weight: bold;" id="title">Title</div>
-                <div class="text-left ms-5 ps-5" style="font-size: 30px; font-weight: bold;" id="">About this course</div>
-                <div class="text-left ms-5 ps-5" style="font-size: clamp(20px, 1.3vw, 100px);" id="description"></div>
-                <div class="text-left ms-5 ps-5 mt-4">
-                    <button class="mb-5 btn btn-outline-light rounded" onclick="window.location = 'index.html'"><big><big><i class="fa-solid fa-home"></i>
-                    Home</big></big></button>
-                    <button class="mb-5 ms-2 btn btn-light rounded" onclick="window.location = 'index.html'"><big><big><i class="fa-solid fa-arrow-pointer"></i>
-                    Join</big></big></button>
-                </div>
-            </div>
-            <img class="mt-0 card-img-top" style="width: 100%; height: 100%; object-fit: cover;" src="" id="img" alt="Card image cap">
+  </div>
+
+  <div id="app">
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: absolute; z-index: 100; width: 100%;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Yuk Fitness</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onclick="downloadApp()">App</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-</div>
-<script defer src="/src/js/material.min.js"></script>
-<script src="/src/js/promise.js"></script>
-<script src="/src/js/fetch.js"></script>
-<script src="/src/js/idb.js"></script>
-<script src="/src/js/utility.js"></script>
-<script src="/src/js/app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+      </nav>
+      <main class="mdl-layout__content mat-typography">
+        <div class="page-content">
+          <div class="containerr">
+            <div class="darken">
+              <div class="text-left ms-5 ps-5" style="font-size: 50px; font-weight: bold;" id="title">Title</div>
+              <div class="text-left ms-5 ps-5" style="font-size: 30px; font-weight: bold;" id="">About this course</div>
+              <div class="text-left ms-5 ps-5" style="font-size: clamp(20px, 1.3vw, 100px);" id="description"></div>
+              <div class="text-left ms-5 ps-5 mt-4">
+                <button class="mb-5 btn btn-outline-light rounded" onclick="window.location = 'index.html'"><big><big><i
+                        class="fa-solid fa-home"></i>
+                      Home</big></big></button>
+                <button class="mb-5 ms-2 btn btn-light rounded" onclick="window.location = 'index.html'"><big><big><i
+                        class="fa-solid fa-arrow-pointer"></i>
+                      Join</big></big></button>
+              </div>
+            </div>
+            <img class="mt-0 card-img-top" style="width: 100%; height: 100%; object-fit: cover;" src="" id="img"
+              alt="Card image cap">
+          </div>
+        </div>
+    </div>
+    <script defer src="/src/js/material.min.js"></script>
+    <script src="/src/js/promise.js"></script>
+    <script src="/src/js/fetch.js"></script>
+    <script src="/src/js/idb.js"></script>
+    <script src="/src/js/utility.js"></script>
+    <script src="/src/js/app.js"></script>
+    <script src="/src/js/feed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
       AOS.init();
     </script>
     <script>
-        if(!localStorage.getItem('active')){
-            window.location.href= '/offline.html'
-        }
-        var dataPage = JSON.parse(localStorage.getItem('active'));
-        $('#title').html(dataPage.title);
-        $('#description').html(dataPage.description);
-        $('#img').attr('src', dataPage.image);
-
-        function downloadApp() {
-            if (deferredPrompt) {
-            deferredPrompt.prompt();
-
-            deferredPrompt.userChoice.then(function(choiceResult) {
-                console.log(choiceResult.outcome);
-
-                if (choiceResult.outcome === 'dismissed') {
-                console.log('User cancelled installation');
-                } else {
-                console.log('User added to home screen');
-                }
-            });
-
-            deferredPrompt = null;
-            }
-        }
+      if (!localStorage.getItem('active')) {
+        window.location.href = '/offline.html'
+      }
+      var dataPage = JSON.parse(localStorage.getItem('active'));
+      $('#title').html(dataPage.title);
+      $('#description').html(dataPage.description);
+      $('#img').attr('src', dataPage.image);
     </script>
 </body>
 <style>
-  body {
-    font-family: 'Lexend' !important;
+  * {
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   #description {
@@ -131,7 +215,7 @@
   }
 
   #title {
-    margin-top: 5em; 
+    margin-top: 5em;
   }
 
   @media (max-width: 768px) {
@@ -140,31 +224,36 @@
     }
 
     #title {
-    margin-top: 3em; 
+      margin-top: 3em;
     }
   }
+
   .containerr {
-       width: 100%; height: 100%; 
-       position: absolute;
-       top: 0;
-       left: 0;       
-       display: block;
-        overflow: auto;
-    }
-    .darken {
-       float: left;
-       position: absolute;
-       left: 0px;
-       top: 0px;
-       width: 100%; height: 100%; 
-       z-index: 1000;
-       display: block;
-        overflow: auto;
-       
-       padding: 5px;
-       color: #FFFFFF;
-       background-image: linear-gradient(to left, rgba(0,0,0,0.2),rgba(0, 120, 60, 0.5));
-       font-weight: bold;
-    }
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    overflow: auto;
+  }
+
+  .darken {
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: block;
+    overflow: auto;
+
+    padding: 5px;
+    color: #FFFFFF;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 120, 60, 0.5));
+    font-weight: bold;
+  }
 </style>
+
 </html>
